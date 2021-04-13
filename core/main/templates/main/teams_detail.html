@@ -1,0 +1,38 @@
+{% extends "main/base_index.html" %}
+
+
+{% block title %}
+    {{ team.name_team }}
+{% endblock title %}
+
+{% block content_title %}
+    {{ team.name_team }}
+{% endblock content_title %}
+
+{% block content %}
+    <br><br><br><br><br>
+    <h1>Pilot in {{ team.name_team }}</h1>
+    <br>
+    <h2>First Pilot</h2>
+    
+    <h3><em>Name: {{ team.pilot1 }}</h3>
+    <h3>Age: {{ team.age1 }} </h3>
+    <h3>Birthday: {{ team.birthday1 }}</h3>
+
+    <br><br>
+    <h2>Second Pilot</h2>
+    
+    <h3><em>Name: {{ team.pilot2 }}</h3>
+    <h3>Age: {{ team.age2 }}</h3>
+    <h3>Birthday: {{ team.birthday2 }}</h3>
+    
+    <br><br>
+
+    <h4>
+        Car {{ team.name_team }}:
+        <br><br>
+        <img src="{{ team.image_car.url }}" width="1500">
+        <br><br><br>
+        {{ team.body }}
+    </h4>
+{% endblock content %}

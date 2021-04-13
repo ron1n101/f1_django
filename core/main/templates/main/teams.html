@@ -1,0 +1,29 @@
+{% extends "main/base_index.html" %}
+
+{% block title %}
+    Teams
+{% endblock title %}
+
+{% block content_title %}
+    Команды в Формуле-1
+{% endblock content_title %}
+
+<div align="right">
+    {% block content %}
+    
+        {% for teams in teams_list %}
+        
+            <div align='center' class="card" style="width: 28rem;">
+                <img src="{{ teams.image_team.url }}" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h3 class="card-title">{{ teams.name_team }}</h3>
+                    <p class="card-text"></p>
+                    <a href="{{ teams.get_absolute_url }}" class="btn btn-primary">Подробнее</a>
+                </div>
+            </div>
+            <hr>
+        {% endfor %}
+    
+{% endblock content %}
+
+</div>

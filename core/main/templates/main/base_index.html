@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>
+        {% block title %}
+
+        {% endblock title %} | Django
+    </title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <img src="../../static/images/f1_logo%201.svg">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'teams' %}">Teams</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'feedback' %}">Feedback</a>
+        </li>
+      </ul>
+  </div>
+</nav>
+
+<div class = 'container'>
+    <div class = "row">
+        <div align="center">
+            <h1>
+                {% block content_title %}
+
+                {% endblock content_title %}
+            </h1>
+        </div>
+    </div>
+</div>
+
+<div class = 'images-container'>
+    {% block images %}
+
+    {% endblock images %}
+</div>
+
+
+
+<div class = 'container_content' >
+    <div class = "row">
+        <div align="center" class="md-3">
+            <p>
+                {% block content %}
+
+                {% endblock content %}
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="feedback">
+    <div class="row justify-content-center ">
+        <div class="col-md-10 mb-3">
+            <p>
+                {% block feedback %}
+            
+                {% endblock feedback %}
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<footer>
+    <hr>
+    <h4 align="center">&copy;ron1n2k</h4>
+</footer>
+
+</body>
+</html>

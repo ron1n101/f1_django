@@ -1,0 +1,20 @@
+{% extends "main/base_index.html" %}
+
+{% block title %}
+    Gallery
+{% endblock title %}
+
+{% block content_title %}
+    Галерея
+{% endblock content_title %}
+
+
+{% block content %}
+
+    {% for gallery in gallery_list %}
+        <img src="{{ gallery.image.url }}">
+        <hr>
+
+    {% endfor %}
+
+{% endblock content %}
